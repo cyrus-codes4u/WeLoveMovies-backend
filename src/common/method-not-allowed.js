@@ -4,3 +4,5 @@ function methodNotAllowed(req,res,next){
         message: "Method not allowed."
     })
 }
+
+module.exports = {methodNotAllowed}

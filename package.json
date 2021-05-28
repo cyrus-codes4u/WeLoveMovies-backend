@@ -17,6 +17,7 @@
     "start:dev": "nodemon src/server.js",
     "start:solution": "docker-compose up --build",
     "test": "jest",
+    "test:movies": "jest test/routes/movies.test.js",
     "test:solution": "docker-compose build && docker-compose run --rm api npm test && docker-compose down"
   },
   "keywords": [],

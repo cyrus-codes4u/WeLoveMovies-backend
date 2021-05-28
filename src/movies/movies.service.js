@@ -1,5 +1,14 @@
 const knex = require("../db/connection")
 
+function read(movieId){
+    return knex 
+        .from("movies")
+        .select("*")
+        .where("movie_id", movieId)
+        .first()
+}
+
+
 function list(reqQuery){
     return knex
         .from("movies as m")
@@ -17,4 +26,5 @@ function list(reqQuery){
 
 module.exports = {
     list,
+    read,
 }

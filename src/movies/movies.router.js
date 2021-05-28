@@ -6,13 +6,13 @@ const methodNotAllowed = require("../common/method-not-allowed")
 router
     .route("/:movieId")
     .get(controller.read)
-    .all(methodNotAllowed)
+    // .all(methodNotAllowed)
 
 
 // /movies list request
 router
     .route("/")
     .get(controller.list)
-    .all(methodNotAllowed)
+    // .all(methodNotAllowed)
 
 module.exports = router

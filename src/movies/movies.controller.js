@@ -2,7 +2,7 @@ const service = require("./movies.service.js")
 
 async function movieExists(req,res,next) {
     const {movieId} = req.params
-    const movie = service.read(movieId)
+    const movie = movieId ? await service.read(movieId) : null
     if(movie){
         return next()
     }
@@ -12,14 +12,20 @@ async function movieExists(req,res,next) {
     })
 }
 
+async function read (req,res,next){
+    const {movieId} = req.params
+    const movie = movieId ? await service.read(movieId) : null
+    res.status(200).send({data: movie})
+}
+
 async function list (req, res, next){
     const {is_showing} = req.query
-    const movies = await service.listShowing(!!is_showing)
-    res.status(200).send({ data: movies, is_showing })
+    const movies = await service.list(!!is_showing)
+    res.status(200).send({ data: movies })
 }
 
 
 module.exports = {
-    list,
-    read: [movieExists],
+    list: [list],
+    read: [movieExists, read],
 }
