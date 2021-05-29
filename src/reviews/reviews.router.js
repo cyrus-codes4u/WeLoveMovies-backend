@@ -1,9 +1,17 @@
 const methodNotAllowed = require("../common/method-not-allowed")
+const controller = require("./reviews.controller")
 
-const router = reuqire("express").Router({ mergeParams: true })
+const router = require("express").Router({ mergeParams: true })
+
+router
+    .route("/:reviewId")
+    .put()
+    .delete(controller.remove)
+    .all(methodNotAllowed)
 
 router
     .route("/")
-    .put()
-    .delete()
+    .get()
     .all(methodNotAllowed)
+
+module.exports = router
