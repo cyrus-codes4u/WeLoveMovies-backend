@@ -1,3 +1,5 @@
 node_modules
 .attachignore
 .qualified-attach.json
+db/migrations
+db/migrations-dev
