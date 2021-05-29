@@ -16,7 +16,7 @@ function list(reqQuery){
         .join("movies_theaters", "m.movie_id", "movies_theaters.movie_id")
         .groupBy("m.movie_id")
         .then((results) => {
-            if(reqQuery === true){
+            if(reqQuery){
                 return results.filter( (movie) => movie.is_showing)
             }else{
                 return results
