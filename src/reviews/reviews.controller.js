@@ -14,9 +14,18 @@ async function reviewExists(req,res,next){
 
 }
 
-// function hasCorrectProperties(req,res,next){
-
-// }
+function hasOnlyCorrectProperties(req,res,next){
+    const {data} = req.body
+    const mutableProperties = [ "score", "critic_id", "content", "movie_id" ]
+    for ( let key of Object.keys(data) ){
+        if(!mutableProperties.includes(key)){
+            next({
+                message: `Update request must only contain valid keys: ${key} is not a valid key`
+            })
+        }
+    }
+    next()
+}
 
 async function list(req,res,next){
 
@@ -33,6 +42,6 @@ async function remove(req,res,next){
 
 module.exports = {
     list,
-    // update: [reviewExists, hasCorrectProperties, update],
+    update: [reviewExists, hasCorrectProperties, update],
     remove: [reviewExists, remove],
 }
