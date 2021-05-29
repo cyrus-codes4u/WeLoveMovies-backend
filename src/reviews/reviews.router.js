@@ -11,7 +11,7 @@ router
 
 router
     .route("/")
-    .get()
+    .get(controller.list)
     .all(methodNotAllowed)
 
 module.exports = router

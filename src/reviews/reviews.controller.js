@@ -1,10 +1,11 @@
 const service = require("./reviews.service.js")
+const reduceProperties = require("../utils/reduce-properties");
 
 async function reviewExists(req,res,next){
     const {reviewId} = req.params
     const id = reviewId ? await service.readId(reviewId) : null
     if(id){
-        res.locals.id = id
+        res.locals.id = id.review_id
         return next()
     }
     next({
@@ -28,7 +29,16 @@ function hasOnlyCorrectProperties(req,res,next){
 }
 
 async function list(req,res,next){
+    const {movieId} = req.params
+    const reviewsAndCritics = await service.list(movieId)
+    const reduceReviewsAndCritics = reduceProperties("review_id", {
+        critic_id: ["critic", "critic_id"],
+        preferred_name: ["critic", "preferred_name"],
+        surname: ["critic", "surname"],
+        organization_name: ["critic", "organization_name"],
+      });
 
+    res.status(200).send({data: reduceReviewsAndCritics(reviewsAndCritics)})
 }
 
 // function update(req,res,next){
@@ -42,6 +52,6 @@ async function remove(req,res,next){
 
 module.exports = {
     list,
-    update: [reviewExists, hasCorrectProperties, update],
+    update: [reviewExists, hasOnlyCorrectProperties, update],
     remove: [reviewExists, remove],
 }
