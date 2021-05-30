@@ -7,6 +7,7 @@ exports.up = function(knex) {
         table.string('rating');
         table.text('description');
         table.string('image_url');
+        table.timestamps(true,true)
     })
 };
 
