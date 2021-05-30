@@ -5,7 +5,7 @@ const router = require("express").Router({ mergeParams: true })
 
 router
     .route("/:reviewId")
-    .put()
+    .put(controller.update)
     .delete(controller.remove)
     .all(methodNotAllowed)
 
