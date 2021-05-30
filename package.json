@@ -19,7 +19,7 @@
     "test": "jest",
     "test:movies": "jest test/routes/movies.test.js",
     "test:theaters": "jest test/routes/theaters.test.js",
-    "test:reviews": "jest test/routes/reviews.test.js" ,
+    "test:reviews": "jest test/routes/reviews.test.js",
     "test:solution": "docker-compose build && docker-compose run --rm api npm test && docker-compose down"
   },
   "keywords": [],
