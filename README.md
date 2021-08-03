@@ -22,3 +22,71 @@ Alternatively, if one wants to see changes to the local repo implemented in real
 npm run start:dev
 ```
 
+## Routes and Request Methods
+### with Expected Responses
+Requests may be made to the following routes with listed HTTP methods:
+
+#### Movies
+1. `/movies`
+  - GET 
+    - Ex. Response
+    ```json
+    {
+      data: {
+        dishes: [
+          // complete list of all movie objects currently showing
+
+      }
+    }
+    ```
+
+2. `/movies/:movieId`
+  - GET 
+    - Ex. Response
+    ```json
+    {
+      data: {
+        movie_id: **ID MATCHING REQUEST PARAMETER**
+        title: //title of movie
+        description: //description of movie
+        runtime_in_minutes: //integer of minutes
+        image_url:  // link to associated image
+        rating: //rating (PG, G, R etc.)
+      }
+    }
+    ```
+#### Reviews
+1. `/reviews`
+  - GET
+    - Ex. Response
+    ```json
+    {
+      data: {
+        orders: [
+          // complete list of all reviews objects
+        ]
+      }
+    }
+    ```
+
+4. `reviews/:reviewId` 
+  - PUT 
+    - Ex. Response
+    ```json
+    {
+      data: {
+        id: //orderId ,
+        deliverTo: //an address, 
+        mobileNumber: //phone number, 
+        dishes: [
+            {
+              //dish info
+              quantity: //integer > 0
+            }
+          ],
+        status: //'pending' 'delivered' or 'cancelled'
+      }
+    }
+    ```
+  - DELETE
+    - Ex. Response `STATUS 204`
