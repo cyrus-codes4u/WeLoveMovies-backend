@@ -34,7 +34,7 @@ Requests may be made to the following routes with listed HTTP methods:
     {
       "data":
         [
-          complete list of all movie objects currently showing
+          "complete list of all movie objects currently showing"
         ]
     }
     ```
@@ -45,12 +45,12 @@ Requests may be made to the following routes with listed HTTP methods:
     ```json
     {
       "data": {
-        "movie_id": "**ID MATCHING REQUEST PARAMETER**"
-        "title": "title of movie"
-        "description": "description of movie"
-        "runtime_in_minutes": 104
-        "image_url":  "link to associated image"
-        "rating": "rating (PG, G, R etc.)"
+        "movie_id" : "**ID MATCHING REQUEST PARAMETER**"
+        "title" : "title of movie",
+        "description" : "description of movie",
+        "runtime_in_minutes" : 104,
+        "image_url" : "link to associated image",
+        "rating" : "rating (PG, G, R etc.)",
       }
     }
     ```
