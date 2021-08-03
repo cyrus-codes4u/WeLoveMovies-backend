@@ -32,11 +32,10 @@ Requests may be made to the following routes with listed HTTP methods:
     - Ex. Response
     ```json
     {
-      data: {
+      "data":
         [
           complete list of all movie objects currently showing
         ]
-      }
     }
     ```
 
@@ -45,13 +44,13 @@ Requests may be made to the following routes with listed HTTP methods:
     - Ex. Response
     ```json
     {
-      data: {
-        movie_id: **ID MATCHING REQUEST PARAMETER**
-        title: "title of movie"
-        description: "description of movie"
-        runtime_in_minutes: 104
-        image_url:  "link to associated image"
-        rating: "rating (PG, G, R etc.)"
+      "data": {
+        "movie_id": "**ID MATCHING REQUEST PARAMETER**"
+        "title": "title of movie"
+        "description": "description of movie"
+        "runtime_in_minutes": 104
+        "image_url":  "link to associated image"
+        "rating": "rating (PG, G, R etc.)"
       }
     }
     ```
@@ -61,11 +60,10 @@ Requests may be made to the following routes with listed HTTP methods:
     - Ex. Response
     ```json
     {
-      data: {
+      "data":
         [
-          complete list of all reviews objects
+          "complete list of all reviews objects"
         ]
-      }
     }
     ```
 
@@ -74,7 +72,7 @@ Requests may be made to the following routes with listed HTTP methods:
     - Ex. Response
     ```json
     {
-      data: {
+      "data": {
       }
     }
     ```
