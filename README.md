@@ -45,7 +45,7 @@ Requests may be made to the following routes with listed HTTP methods:
     ```json
     {
       "data": {
-        "movie_id" : "**ID MATCHING REQUEST PARAMETER**"
+        "movie_id" : "ID MATCHING REQUEST PARAMETER",
         "title" : "title of movie",
         "description" : "description of movie",
         "runtime_in_minutes" : 104,
