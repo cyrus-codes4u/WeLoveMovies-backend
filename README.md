@@ -33,9 +33,9 @@ Requests may be made to the following routes with listed HTTP methods:
     ```json
     {
       data: {
-        dishes: [
-          // complete list of all movie objects currently showing
-
+        [
+          complete list of all movie objects currently showing
+        ]
       }
     }
     ```
@@ -47,11 +47,11 @@ Requests may be made to the following routes with listed HTTP methods:
     {
       data: {
         movie_id: **ID MATCHING REQUEST PARAMETER**
-        title: //title of movie
-        description: //description of movie
-        runtime_in_minutes: //integer of minutes
-        image_url:  // link to associated image
-        rating: //rating (PG, G, R etc.)
+        title: "title of movie"
+        description: "description of movie"
+        runtime_in_minutes: 104
+        image_url:  "link to associated image"
+        rating: "rating (PG, G, R etc.)"
       }
     }
     ```
@@ -62,8 +62,8 @@ Requests may be made to the following routes with listed HTTP methods:
     ```json
     {
       data: {
-        orders: [
-          // complete list of all reviews objects
+        [
+          complete list of all reviews objects
         ]
       }
     }
@@ -75,16 +75,6 @@ Requests may be made to the following routes with listed HTTP methods:
     ```json
     {
       data: {
-        id: //orderId ,
-        deliverTo: //an address, 
-        mobileNumber: //phone number, 
-        dishes: [
-            {
-              //dish info
-              quantity: //integer > 0
-            }
-          ],
-        status: //'pending' 'delivered' or 'cancelled'
       }
     }
     ```
